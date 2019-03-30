@@ -1,0 +1,38 @@
+﻿@model WebStore.Models.Employee
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width-device-width" charset="utf-8" />
+    <title>Index Page</title>
+</head>
+<body>
+    <h3>Карточка сотруника</h3>
+    <div>
+        <p>Фамилия:</p>
+        <p>@Model.LastName</p>
+    </div>
+    <div>
+        <p>Имя:</p>
+        <p>@Model.FirstName</p>
+    </div>
+    <div>
+        <p>Отчество:</p>
+        <p>@Model.MiddleName</p>
+    </div>
+    <div>
+        <p>Возраст:</p>
+        <p>@Model.Age</p>
+    </div>
+    <div>
+        <p>Принят на работу:</p>
+        <p>@Model.HiredDate.ToShortDateString()</p>
+    </div>
+    <div>
+        <p>Принят на работу:</p>
+        <p>@Model.HiredDate.ToShortDateString()</p>
+    </div>
+    <hr />
+    <a asp-controller="Employees" asp-action="Index">К списку сотрудников</a>
+</body>
+</html>
