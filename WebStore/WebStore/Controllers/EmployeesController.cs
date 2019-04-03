@@ -31,5 +31,52 @@ namespace WebStore.Controllers
             return View(employee);
         }
 
+        public IActionResult Edit(int id)
+        {
+            var employee = _employees.FirstOrDefault(e => e.Id == id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+            return View(employee);
+        }
+
+        public IActionResult Add()
+        {
+            int nextId = _employees.Max(i => i.Id) + 1;
+            Employee employee = new Employee { Id = nextId };
+            _employees.Add(employee);
+            return View("Index",_employees);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(int id, Employee employeeEdit)
+        {
+            var employee = _employees.FirstOrDefault(e => e.Id == id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+            int i = _employees.IndexOf(employee);
+            _employees[i].LastName = employeeEdit.LastName;
+            _employees[i].FirstName = employeeEdit.FirstName;
+            _employees[i].MiddleName = employeeEdit.MiddleName;
+            _employees[i].Age = employeeEdit.Age;
+            _employees[i].HiredDate = employeeEdit.HiredDate;
+            return View("Index",_employees);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var employee = _employees.FirstOrDefault(e => e.Id == id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+            _employees.Remove(employee);
+            return View("Index", _employees);
+        }
+
+
     }
 }

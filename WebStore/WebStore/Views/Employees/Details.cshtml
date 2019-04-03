@@ -1,28 +1,22 @@
-﻿@model WebStore.Models.Employee
+﻿@{
+    Layout = "_Layout";
+}
+@model WebStore.Models.Employee
 <h3>Карточка сотруника</h3>
 <div>
-    <p>Фамилия:</p>
-    <p>@Model.LastName</p>
+    <p>Фамилия: @Model.LastName</p>
 </div>
 <div>
-    <p>Имя:</p>
-    <p>@Model.FirstName</p>
+    <p>Имя: @Model.FirstName</p>
 </div>
 <div>
-    <p>Отчество:</p>
-    <p>@Model.MiddleName</p>
+    <p>Отчество: @Model.MiddleName</p>
 </div>
 <div>
-    <p>Возраст:</p>
-    <p>@Model.Age</p>
+    <p>Возраст: @Model.Age</p>
 </div>
 <div>
-    <p>Принят на работу:</p>
-    <p>@Model.HiredDate.ToShortDateString()</p>
-</div>
-<div>
-    <p>Принят на работу:</p>
-    <p>@Model.HiredDate.ToShortDateString()</p>
+    <p>Принят на работу: @Model.HiredDate.ToShortDateString()</p>
 </div>
 <hr />
 <a asp-controller="Employees" asp-action="Index">К списку сотрудников</a>

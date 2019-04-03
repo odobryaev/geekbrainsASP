@@ -183,7 +183,7 @@ namespace AspNetCore
             WriteLiteral("   </div>\r\n                </div>\r\n                <div class=\"col-sm-3 col-sm-offset-1\">\r\n                    <div class=\"single-widget\">\r\n                        <h2>About Shopper</h2>\r\n                        ");
             EndContext();
             BeginContext(6356, 392, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "332a6ee774d644cca7f279940b5e87f8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2c5d452ab0d642398a087f7e0b9a515c", async() => {
                 BeginContext(6392, 349, true);
                 WriteLiteral(@"
                             <input type=""text"" placeholder=""Your email address"" />
