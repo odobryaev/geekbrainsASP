@@ -1,13 +1,16 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Layout = "_LayoutBase";
+}
+<div class="container">
+    @RenderBody()
+</div>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-</head>
-<body>
-    <div>
-        @RenderBody()
-    </div>
-</body>
-</html>
+@section Styles
+    {
+        @RenderSection("Styles", false)
+    }
+
+@section Scripts
+    {
+        @RenderSection("Scripts", false)
+    }

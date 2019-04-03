@@ -67,7 +67,6 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: @zindex-modal-background;
   background-color: @modal-backdrop-bg;
   // Fade for backdrop
   &.fade { .opacity(0); }
@@ -79,7 +78,7 @@
 .modal-header {
   padding: @modal-title-padding;
   border-bottom: 1px solid @modal-header-border-color;
-  &:extend(.clearfix all);
+  min-height: (@modal-title-padding + @modal-title-line-height);
 }
 // Close icon
 .modal-header .close {
