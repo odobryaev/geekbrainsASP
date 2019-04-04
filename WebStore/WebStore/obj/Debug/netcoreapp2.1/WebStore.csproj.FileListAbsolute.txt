@@ -43,6 +43,6 @@ E:\_gitHub\geekbrainsASP\WebStore\WebStore\obj\Debug\netcoreapp2.1\Razor\Views\H
 E:\_gitHub\geekbrainsASP\WebStore\WebStore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Cart.g.cshtml.cs
 E:\_gitHub\geekbrainsASP\WebStore\WebStore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Blog.g.cshtml.cs
 E:\_gitHub\geekbrainsASP\WebStore\WebStore\obj\Debug\netcoreapp2.1\Razor\Views\Home\BlogSingle.g.cshtml.cs
-E:\_gitHub\geekbrainsASP\WebStore\WebStore\obj\Debug\netcoreapp2.1\Razor\Views\Home\NotFound.g.cshtml.cs
 E:\_gitHub\geekbrainsASP\WebStore\WebStore\obj\Debug\netcoreapp2.1\Razor\Views\Employees\Details.g.cshtml.cs
 E:\_gitHub\geekbrainsASP\WebStore\WebStore\obj\Debug\netcoreapp2.1\Razor\Views\Employees\Edit.g.cshtml.cs
+E:\_gitHub\geekbrainsASP\WebStore\WebStore\obj\Debug\netcoreapp2.1\Razor\Views\Home\Error404.g.cshtml.cs

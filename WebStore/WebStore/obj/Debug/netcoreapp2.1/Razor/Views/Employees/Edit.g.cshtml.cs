@@ -54,7 +54,7 @@ namespace AspNetCore
             WriteLiteral("<h3>Карточка сотруника</h3>\r\n\r\n\r\n");
             EndContext();
             BeginContext(98, 529, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6de3015f50b24b9ca6067c7f90ace419", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "47254393b8d143068ad9c18c0a6bb9ec", async() => {
                 BeginContext(118, 52, true);
                 WriteLiteral("\r\n    <p>Фамилия: <input type=\"text\" name=\"LastName\"");
                 EndContext();
@@ -128,7 +128,7 @@ WriteAttributeValue("", 517, Model.HiredDate.ToString("yyyy-MM-dd"), 517, 39, fa
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(631, 73, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "59761f9f213f4132a118d18f22f2a794", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cce9b39b020c40d69c5320abec06d3ac", async() => {
                 BeginContext(680, 20, true);
                 WriteLiteral("К списку сотрудников");
                 EndContext();
