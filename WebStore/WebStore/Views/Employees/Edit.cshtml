@@ -2,17 +2,52 @@
     Layout = "_Layout";
 }
 @model WebStore.Models.Employee
-<h3>Карточка сотруника</h3>
 
+<h3>Сотрудник</h3>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-controller="Employees" asp-action="Edit">
+            <div asp-validation-summary="ModelOnly"></div>
 
-<form method="post">
-    <p>Фамилия: <input type="text" name="LastName" value="@Model.LastName" /></p>
+            <input asp-for="Id" type="hidden" />
 
-    <p>Имя: <input type="text" name="FirstName" value="@Model.FirstName" /></p>
-    <p>Отчество: <input type="text" name="MiddleName" value="@Model.MiddleName" /></p>
-    <p>Возраст: <input type="number" name="Age" value="@Model.Age" /></p>
-    <p>Принят на работу: <input type="date" name="HiredDate" value="@Model.HiredDate.ToString("yyyy-MM-dd")" /></p>
-    <p><input type="submit" value="Отправить" /></p>
-</form>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
 
-<a asp-controller="Employees" asp-action="Index">К списку сотрудников</a>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="MiddleName" class="control-label"></label>
+                <input asp-for="MiddleName" class="form-control" />
+                <span asp-validation-for="MiddleName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="HiredDate" class="control-label"></label>
+                <input asp-for="HiredDate" class="form-control" />
+                <span asp-validation-for="HiredDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-controller="Employees" asp-action="Index">К списку сотрудников</a>
+</div>
