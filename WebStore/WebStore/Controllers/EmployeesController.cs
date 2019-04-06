@@ -3,27 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WebStore.Infrastructure.interfaces;
 using WebStore.Models;
 
 namespace WebStore.Controllers
 {
     public class EmployeesController : Controller
     {
-        private static readonly List<Employee> _employees = new List<Employee>
+        private readonly IEmployeesData _EmployeesData;
+
+        public EmployeesController(IEmployeesData EmployeesData)
         {
-            new Employee { Id = 0, FirstName = "Иван", MiddleName= "Петрович", LastName = "Смирнов", Age=30, HiredDate=new DateTime(2010, 5, 20)},
-            new Employee { Id = 1, FirstName = "Петр", MiddleName= "Иванович", LastName = "Романов", Age=25, HiredDate=new DateTime(2012, 1, 16)},
-            new Employee { Id = 2, FirstName = "Александр", MiddleName= "Александрович", LastName = "Сидоров", Age=22, HiredDate=new DateTime(2015, 10, 1)},
-        };
+            _EmployeesData = EmployeesData;
+        }
 
         public IActionResult Index()
         {
-            return View(_employees);
+            return View(_EmployeesData.GetAll());
         }
 
         public IActionResult Details(int id)
         {
-            var employee = _employees.FirstOrDefault(e => e.Id == id);
+            var employee = _EmployeesData.GetById(id);
             if (employee == null)
             {
                 return NotFound();
@@ -31,52 +32,59 @@ namespace WebStore.Controllers
             return View(employee);
         }
 
-        public IActionResult Edit(int id)
+        public IActionResult Edit(int? id)
         {
-            var employee = _employees.FirstOrDefault(e => e.Id == id);
-            if (employee == null)
+            Employee employee;
+            if (id != null)
             {
-                return NotFound();
+                employee = _EmployeesData.GetById((int)id);
+                if (employee is null)
+                    return NotFound();
+            }
+            else
+            {
+                employee = new Employee();
             }
             return View(employee);
-        }
-
-        public IActionResult Add()
-        {
-            int nextId = _employees.Max(i => i.Id) + 1;
-            Employee employee = new Employee { Id = nextId };
-            _employees.Add(employee);
-            return View("Index",_employees);
         }
 
         [HttpPost]
-        public IActionResult Edit(int id, Employee employeeEdit)
+        public IActionResult Edit(Employee employee)
         {
-            var employee = _employees.FirstOrDefault(e => e.Id == id);
-            if (employee == null)
+            if (!ModelState.IsValid)
             {
-                return NotFound();
+                return View(employee);
             }
-            int i = _employees.IndexOf(employee);
-            _employees[i].LastName = employeeEdit.LastName;
-            _employees[i].FirstName = employeeEdit.FirstName;
-            _employees[i].MiddleName = employeeEdit.MiddleName;
-            _employees[i].Age = employeeEdit.Age;
-            _employees[i].HiredDate = employeeEdit.HiredDate;
-            return View("Index",_employees);
+
+            if (employee.Id > 0)
+            {
+                var db_employee = _EmployeesData.GetById(employee.Id);
+                if (db_employee is null)
+                    return NotFound();
+                db_employee.LastName = employee.LastName;
+                db_employee.FirstName = employee.FirstName;
+                db_employee.MiddleName = employee.MiddleName;
+                db_employee.Age = employee.Age;
+                db_employee.HiredDate = employee.HiredDate;
+            }
+            else
+            {
+                _EmployeesData.AddNew(employee);
+            }
+            _EmployeesData.SaveChanges();
+            return RedirectToAction("Index");
+
         }
 
         public IActionResult Delete(int id)
         {
-            var employee = _employees.FirstOrDefault(e => e.Id == id);
-            if (employee == null)
+            var employee = _EmployeesData.GetById(id);
+            if (employee is null)
             {
                 return NotFound();
             }
-            _employees.Remove(employee);
-            return View("Index", _employees);
+            _EmployeesData.Delete(id);
+            return RedirectToAction("Index");
         }
-
-
     }
 }

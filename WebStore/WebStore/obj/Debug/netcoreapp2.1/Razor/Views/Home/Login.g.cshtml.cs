@@ -64,7 +64,7 @@ namespace AspNetCore
                         ");
             EndContext();
             BeginContext(405, 488, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c95b6884aa93413d931f42ad5e77cb47", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0d01306d6ea04984a946b52910c4bf3b", async() => {
                 BeginContext(422, 464, true);
                 WriteLiteral(@"
                             <input type=""text"" placeholder=""Name"" />
@@ -105,7 +105,7 @@ namespace AspNetCore
                         ");
             EndContext();
             BeginContext(1280, 369, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fcc46571745b4256aacbc4361dd02269", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e139578a0d1a4a28ada67a53929adb63", async() => {
                 BeginContext(1297, 345, true);
                 WriteLiteral(@"
                             <input type=""text"" placeholder=""Name"" />

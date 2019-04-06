@@ -10,9 +10,13 @@ namespace WebStore.Infrastructure.interfaces
     {
         IEnumerable<Employee> GetAll();
 
-        Employee getById(int id);
+        Employee GetById(int id);
+
+        void AddNew(Employee employee);
 
         void Delete(int id);
+
+        void SaveChanges();
 
     }
 }
