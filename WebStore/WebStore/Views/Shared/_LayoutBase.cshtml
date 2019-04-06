@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    @await Html.PartialAsync("Partial/_Head")
+    @RenderSection("Styles",false)
+</head>
+<body>
+    @await Html.PartialAsync("Partial/_Header")
+
+    @RenderBody()
+
+    @await Html.PartialAsync("Partial/_Footer")
+
+    @await Html.PartialAsync("Partial/_Scripts")
+    @RenderSection("Scripts",false)
+</body>
+</html>

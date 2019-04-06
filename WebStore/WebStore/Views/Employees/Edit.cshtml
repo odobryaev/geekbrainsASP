@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "_Layout";
+}
+@model WebStore.Models.Employee
+<h3>Карточка сотруника</h3>
+
+
+<form method="post">
+    <p>Фамилия: <input type="text" name="LastName" value="@Model.LastName" /></p>
+
+    <p>Имя: <input type="text" name="FirstName" value="@Model.FirstName" /></p>
+    <p>Отчество: <input type="text" name="MiddleName" value="@Model.MiddleName" /></p>
+    <p>Возраст: <input type="number" name="Age" value="@Model.Age" /></p>
+    <p>Принят на работу: <input type="date" name="HiredDate" value="@Model.HiredDate.ToString("yyyy-MM-dd")" /></p>
+    <p><input type="submit" value="Отправить" /></p>
+</form>
+
+<a asp-controller="Employees" asp-action="Index">К списку сотрудников</a>
